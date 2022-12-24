@@ -6,6 +6,7 @@ import Link from "@mui/material/Link";
 import ProTip from "./ProTip";
 import EssayScreen from "./Components/EssayScreen";
 import BasicModal from "./Components/BasicModal";
+import AlertDialog from "./Components/AlertDialog";
 
 const starRatingsUpdatedHandler = (value: number) => {
   console.log(value);
@@ -18,6 +19,7 @@ export default function App() {
   const essayFeedbackTitle: string = 'Please provide your feedback on auto-generated Essay';
   const siteFeedbackTitle: string = 'How satisfied are you with Smodin services?';
   const [alertTitle, setAlertTitle] = React.useState(essayFeedbackTitle);
+  const [shouldShowAlertDialog, setShouldShowAlertDialog] = React.useState(false);
 
   const showStarsModal = () => {
     setTimeout(() => {
@@ -32,9 +34,7 @@ export default function App() {
     const starRatingsUpdatedHandler = (value: number) => {
       if (value > 0){
         if (essayFeedback == 0){
-          setEssayFeedback(value);
-          console.log('essayFeedback => ', essayFeedback);
-  
+          setEssayFeedback(value);  
           setAlertTitle(siteFeedbackTitle);
           setShouldShowStarsModal(false);
           showStarsModal();
@@ -42,6 +42,9 @@ export default function App() {
         else{
           setSiteFeedback(value);
           setShouldShowStarsModal(false);
+          if (essayFeedback == 5 && value == 5){
+            setShouldShowAlertDialog(true);
+          }  
         }
       }
     };
@@ -49,12 +52,14 @@ export default function App() {
     const trustPilotHandler = () => {
         console.log('Please hit the api here');
     }
+    
 
 
   return (
     <Container maxWidth="sm">
       <EssayScreen />
       {shouldShowStarsModal && <BasicModal title={alertTitle} callback={starRatingsUpdatedHandler} />}
+      {shouldShowAlertDialog && <AlertDialog callback={trustPilotHandler}/>}
 
     </Container>
   );
