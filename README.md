@@ -4,4 +4,6 @@
 2. Run npm install to download modules/packages (Node v16.14.0 was used as it was set by default in machine)
 3. `run npm start` to run the app.
 4. Copy/pasted the Loreum / ipsum text from the following site: https://www.lipsum.com and moved it to EssayScreen.tsx as a separate resuable component. (can further be configured but for now this one is fine)
+5. Added a BasicModal for Star Ratings and made it reusable/configurable. took the code from here https://mui.com/material-ui/react-rating/
+6. 
 
