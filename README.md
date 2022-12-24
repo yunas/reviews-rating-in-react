@@ -1,1 +1,4 @@
 # reviews-rating-in-react
+
+1. Cloned the project from (curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app-with-typescript) to have a head start.
+2. 
