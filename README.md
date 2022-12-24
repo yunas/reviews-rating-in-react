@@ -13,3 +13,8 @@
 2. Remove the `console.log`
 
 
+# Demo
+1. Demo video can be seen here: https://www.loom.com/share/86291240026f4b5dbac26edd3753aedf
+
+
+
